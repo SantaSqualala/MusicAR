@@ -6,14 +6,13 @@ using UnityEngine.XR.ARFoundation;
 [RequireComponent(typeof(Camera))]
 public class ARPlaceObject : MonoBehaviour
 {
-    [SerializeField] Camera camera;
+    [SerializeField] Camera cam;
     [SerializeField] private GameObject prefabToPlace;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        camera= GetComponent<Camera>();
+        cam= GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -25,7 +24,7 @@ public class ARPlaceObject : MonoBehaviour
         if (Input.touches[0].phase == TouchPhase.Began)
         {
             Vector2 touchPos = Input.touches[0].position;
-            Ray ray = camera.ScreenPointToRay(touchPos);
+            Ray ray = cam.ScreenPointToRay(touchPos);
 
             RaycastHit hit;
 
