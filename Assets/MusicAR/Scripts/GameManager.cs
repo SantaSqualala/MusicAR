@@ -12,11 +12,17 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     [SerializeField] GameState gameState;
+    [SerializeField] GameObject listenUI;
+    [SerializeField] GameObject displayUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         if (!InstrumentManager.instance.enabled)
         {
             Debug.Log("No instrument manager !");
@@ -29,5 +35,23 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetGameState(GameState newState)
+    {
+        gameState = newState;
+
+        switch (gameState)
+        {
+            case GameState.Listen:
+                break;
+            case GameState.DisplayInfos:
+                break;
+            case GameState.LoadingPlanes:
+                break; 
+            case GameState.PlaceInstruments:
+                break;
+            default: break;
+        }
     }
 }
