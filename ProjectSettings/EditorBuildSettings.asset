@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MusicAR/Scenes/Dev.unity
+    path: Assets/MusicAR/Scenes/ARPlayMode.unity
     guid: 5625bedb3307b8045af8fad3d204a3a9
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: f9481e9954211b549ae6cf87dc574766,

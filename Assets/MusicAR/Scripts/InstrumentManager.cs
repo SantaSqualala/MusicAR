@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstrumentManager : MonoBehaviour
 {
-    [HideInInspector] public InstrumentManager instance;
+    [HideInInspector] public static InstrumentManager instance;
 
     [Header("Instruments")]
     [SerializeField] List<InstrumentBehaviour> instruments = new List<InstrumentBehaviour>();
@@ -14,11 +14,11 @@ public class InstrumentManager : MonoBehaviour
     [Header("Instrument deletion")]
     [SerializeField] int maxInstrumentsAllowed = 10;
     [SerializeField] GameObject instrumentDeletionMessage;
-    
+    int instrumentsInPlace = 0;    
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         instance = this;
     }
 
@@ -28,12 +28,36 @@ public class InstrumentManager : MonoBehaviour
         
     }
 
-    // 
+    // Add an instrument at position
     public void AddInstrument(GameObject prefab, Vector3 position)
     {
         GameObject go = Instantiate(prefab);
         instruments.Add(go.GetComponent<InstrumentBehaviour>());
         go.transform.position = position;
+        instrumentsInPlace++;
+
+        // remove 1rst instrument if 
+        if(instrumentsInPlace >= maxInstrumentsAllowed)
+        {
+            RemoveInstrument(instruments[0].gameObject);
+        }
+    }
+
+    // Remove a specific instrument
+    public void RemoveInstrument(GameObject go)
+    {
+        instruments.Remove(go.GetComponent<InstrumentBehaviour>());
+        Destroy(go);
+    }
+
+    // Remove all instruments
+    public void RemoveAllInstruments()
+    {
+        foreach (InstrumentBehaviour instrument in instruments)
+        {
+            Destroy(instrument.gameObject);
+        }
+        instruments.Clear();
     }
 
     // Restart all instruments songs at once

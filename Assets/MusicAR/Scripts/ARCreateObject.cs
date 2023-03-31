@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class ARCreateObject : MonoBehaviour
 {
-    InstrumentManager instrumentManager;
+    [SerializeField] GameObject dizi, guzheng, tanggu;
+    GameObject prefab;
 
-    [SerializeField] List<GameObject> prefabs = new List<GameObject>();
-    [SerializeField] GameObject prefab;
-
-    public void SelectInstrument()
+    public void SelectDizi()
     {
+        prefab = dizi;
+    }
 
+    public void SelectGuzheng()
+    {
+        prefab = guzheng;
+    }
+
+    public void Tanggu()
+    {
+        prefab = tanggu;
     }
 
     public void Create()
     {
-        instrumentManager = FindObjectOfType<InstrumentManager>();
-
         if (prefab != null) 
         {
-            instrumentManager.instance.AddInstrument(prefab, transform.position);
+            InstrumentManager.instance.AddInstrument(prefab, transform.position);
         }
 
         transform.gameObject.SetActive(false);

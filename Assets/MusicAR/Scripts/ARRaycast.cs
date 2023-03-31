@@ -9,7 +9,7 @@ public class ARRaycast : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] GameObject posHoverPoint;
-    [SerializeField] float timer = 2f;
+    [SerializeField] float timer = 5f;
 
     private RaycastHit rHit;
 
