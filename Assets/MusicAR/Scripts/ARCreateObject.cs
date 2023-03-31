@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class ARCreateObject : MonoBehaviour
 {
-    [SerializeField] GameObject prefab;
-    [SerializeField] int maxInstances = 10;
+    InstrumentManager instrumentManager;
 
-    int instances = 0;
+    [SerializeField] List<GameObject> prefabs = new List<GameObject>();
+    [SerializeField] GameObject prefab;
+
+    public void SelectInstrument()
+    {
+
+    }
 
     public void Create()
     {
-        if (prefab != null && instances < maxInstances) 
+        instrumentManager = FindObjectOfType<InstrumentManager>();
+
+        if (prefab != null) 
         {
-            GameObject go = Instantiate(prefab, transform.position, prefab.transform.rotation);
-            instances++;
+            instrumentManager.instance.AddInstrument(prefab, transform.position);
         }
 
         transform.gameObject.SetActive(false);

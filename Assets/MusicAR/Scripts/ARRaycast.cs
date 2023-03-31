@@ -51,7 +51,7 @@ public class ARRaycast : MonoBehaviour
         Vector2 touchPos = Input.touches[0].position;
         Ray ray = cam.ScreenPointToRay(touchPos);
 
-        if (Physics.Raycast(ray, out rHit, 5.0f))
+        if (Physics.Raycast(ray, out rHit, 5.0f) && !rHit.transform.GetComponentInParent<InstrumentBehaviour>())
         {
             posHoverPoint.transform.position = rHit.point + (rHit.normal * 0.05f);
             posHoverPoint.transform.up = rHit.normal;
