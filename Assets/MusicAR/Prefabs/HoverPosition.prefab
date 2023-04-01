@@ -103,7 +103,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -263,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8063987092987494990
 Transform:
   m_ObjectHideFlags: 0
@@ -293,9 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f86ed8062f88f4c8e0319ab1a0e113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dizi: {fileID: 0}
-  guzheng: {fileID: 0}
-  tanggu: {fileID: 0}
+  dizi: {fileID: 8133284583772407711, guid: 4b933198fd485264bbcaa08c7eceb977, type: 3}
+  guzheng: {fileID: 2612867824409670331, guid: 5a7ac19559524f946a000cdbb70fa8bb, type: 3}
+  tanggu: {fileID: 2612867824409670331, guid: 048cf5f12129d074785473802271becd, type: 3}
 --- !u!1 &6013561882315655654
 GameObject:
   m_ObjectHideFlags: 0

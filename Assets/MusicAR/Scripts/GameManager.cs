@@ -43,15 +43,22 @@ public class GameManager : MonoBehaviour
 
         switch (gameState)
         {
-            case GameState.Listen:
+            case GameState.Listen: 
+                listenUI.SetActive(true);
+
                 break;
+
             case GameState.DisplayInfos:
                 break;
+
             case GameState.LoadingPlanes:
-                break; 
+                break;
+                
             case GameState.PlaceInstruments:
                 break;
-            default: break;
+            
+            default: 
+                break;
         }
     }
 }
