@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MusicAR/Scenes/MainMenu.unity
+    guid: 3dfdda8f115747f4b9a777e7e9343ec6
+  - enabled: 1
     path: Assets/MusicAR/Scenes/ARPlayMode.unity
     guid: 5625bedb3307b8045af8fad3d204a3a9
   m_configObjects:

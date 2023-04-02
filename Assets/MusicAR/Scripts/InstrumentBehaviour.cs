@@ -6,6 +6,7 @@ using UnityEngine;
 public class InstrumentBehaviour : MonoBehaviour
 {
     [SerializeField] AudioSource music;
+    [SerializeField] AudioClip solo, combined;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,10 @@ public class InstrumentBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(FindAnyObjectByType<InstrumentBehaviour>().GetComponent<AudioSource>().clip != music.clip && music.clip != combined)
+        {
+            
+        }
     }
 
     // Pause music on this instrument

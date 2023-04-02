@@ -16,20 +16,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] GameState gameState;
-    [SerializeField] GameObject listenUI;
-    [SerializeField] GameObject displayUI;
+    [SerializeField] GameObject listenUI, displayUI, loadingUI;
+    [SerializeField] float loadingUIDelay = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-
-        if (!InstrumentManager.instance.enabled)
-        {
-            Debug.Log("No instrument manager !");
-        }
-
-
+        SetGameState(GameState.LoadingPlanes);
     }
 
     // Update is called once per frame
@@ -67,6 +61,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.LoadingPlanes:
                 FindObjectOfType<ARRaycast>().GetComponent<ARRaycast>().enabled = false;
+                StartCoroutine(HideOnTimer(loadingUI, loadingUIDelay));
                 break;
                 
             case GameState.PlaceInstruments:
@@ -88,5 +83,12 @@ public class GameManager : MonoBehaviour
     public void QuitApp()
     {
         Application.Quit();
+    }
+
+    IEnumerator HideOnTimer(GameObject go, float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        go.SetActive(false);
+        SetGameState(GameState.PlaceInstruments);
     }
 }
