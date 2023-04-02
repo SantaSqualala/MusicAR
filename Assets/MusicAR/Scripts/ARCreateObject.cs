@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ARCreateObject : MonoBehaviour
 {
+    [SerializeField] ARRaycast raycastControler;
     [SerializeField] GameObject dizi, guzheng, tanggu;
     GameObject prefab;
 
@@ -17,7 +18,7 @@ public class ARCreateObject : MonoBehaviour
         prefab = guzheng;
     }
 
-    public void Tanggu()
+    public void SelectTanggu()
     {
         prefab = tanggu;
     }
@@ -29,6 +30,6 @@ public class ARCreateObject : MonoBehaviour
             InstrumentManager.instance.AddInstrument(prefab, transform.position);
         }
 
-        transform.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
