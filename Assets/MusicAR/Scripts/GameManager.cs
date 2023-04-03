@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.LoadingPlanes:
+                loadingUI.SetActive(true);
                 FindObjectOfType<ARRaycast>().GetComponent<ARRaycast>().enabled = false;
                 StartCoroutine(HideOnTimer(loadingUI, loadingUIDelay));
                 break;
@@ -61,7 +62,8 @@ public class GameManager : MonoBehaviour
                 placementUI.SetActive(true);
                 break;
             
-            default: 
+            default:
+                SetGameState(GameState.LoadingPlanes);
                 break;
         }
     }
