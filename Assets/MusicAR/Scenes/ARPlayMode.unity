@@ -2210,7 +2210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1339705864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,11 +2315,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HoverPosition
-      objectReference: {fileID: 0}
-    - target: {fileID: 891114022124229311, guid: 5b1e09bb30e18b247965adea6c557acb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8063987092987494990, guid: 5b1e09bb30e18b247965adea6c557acb,
         type: 3}
@@ -3037,7 +3032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2033090557
 RectTransform:
   m_ObjectHideFlags: 0
