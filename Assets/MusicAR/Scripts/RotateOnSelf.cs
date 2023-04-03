@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RotateOnSelf : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
-    [SerializeField] private Vector3 axis = Vector3.one;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private Vector3 axis = Vector3.up;
 
     // Update is called once per frame
     void Update()

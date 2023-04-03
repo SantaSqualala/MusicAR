@@ -17,10 +17,7 @@ public class InstrumentBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(FindAnyObjectByType<InstrumentBehaviour>().GetComponent<AudioSource>().clip != music.clip && music.clip != combined)
-        {
-            
-        }
+
     }
 
     // Pause music on this instrument

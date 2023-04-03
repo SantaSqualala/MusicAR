@@ -46,12 +46,15 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case GameState.Listen:
+                FindObjectOfType<ARRaycast>().GetComponent<ARRaycast>().HidePlacer();
+                FindObjectOfType<ARRaycast>().GetComponent<ARRaycast>().enabled = false;
                 listenUI.SetActive(true);
                 placementUI.SetActive(false);
                 break;
 
             case GameState.LoadingPlanes:
                 loadingUI.SetActive(true);
+                FindObjectOfType<ARRaycast>().GetComponent<ARRaycast>().HidePlacer();
                 FindObjectOfType<ARRaycast>().GetComponent<ARRaycast>().enabled = false;
                 StartCoroutine(HideOnTimer(loadingUI, loadingUIDelay));
                 break;
@@ -72,6 +75,12 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("ARPlayMode");
+    }
+
+    // Return to Main Menu
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     // Exit the app immediately

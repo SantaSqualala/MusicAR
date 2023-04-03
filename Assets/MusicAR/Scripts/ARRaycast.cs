@@ -59,6 +59,11 @@ public class ARRaycast : MonoBehaviour
         }
     }
 
+    public void HidePlacer()
+    {
+        posHoverPoint.SetActive(false);
+    }
+
     private IEnumerator PlaceObjectValidationDelay()
     {
         yield return new WaitForSeconds(timer);
