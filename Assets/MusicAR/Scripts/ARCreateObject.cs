@@ -29,6 +29,11 @@ public class ARCreateObject : MonoBehaviour
         {
             InstrumentManager.instance.AddInstrument(prefab, transform.position);
         }
+        else
+        {
+            prefab = dizi;
+            InstrumentManager.instance.AddInstrument(prefab, transform.position);
+        }
 
         gameObject.SetActive(false);
     }
