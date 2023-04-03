@@ -10,6 +10,12 @@ public class DisplayInfo : MonoBehaviour
 
     float t;
 
+    // Start is called before the first Update
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
