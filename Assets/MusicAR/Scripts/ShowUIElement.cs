@@ -13,4 +13,16 @@ public class ShowUIElement : MonoBehaviour
 
         uiToActivate.SetActive(active);
     }
+
+    public void Show()
+    {
+        active = true;
+        uiToActivate.SetActive(active);
+    }
+
+    public void Hide()
+    {
+        active = false;
+        uiToActivate.SetActive(active);
+    }
 }

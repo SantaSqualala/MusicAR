@@ -22,6 +22,8 @@ public class ARRaycast : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        UI();
+
         if (Input.touchCount == 0)
             return;
 
@@ -30,7 +32,6 @@ public class ARRaycast : MonoBehaviour
         {
             posHoverPoint.SetActive(true);
             TestScreenPosition();
-            UI();
         }
 
         // change position of the hovering asset
@@ -43,7 +44,6 @@ public class ARRaycast : MonoBehaviour
         if (Input.touches[0].phase == TouchPhase.Ended)
         {
             StartCoroutine(PlaceObjectValidationDelay());
-            UI();
         }
     }
 
@@ -68,11 +68,14 @@ public class ARRaycast : MonoBehaviour
 
     private void UI()
     {
-        Vector2 touchPos = Input.touches[0].position;
-        Ray ray = cam.ScreenPointToRay(touchPos);
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         if (Physics.Raycast(ray, out rHit, 5.0f) && rHit.transform.GetComponent<ShowUIElement>())
         {
-            GetComponent<ShowUIElement>().ToggleUI();
+            GetComponent<ShowUIElement>().Show();
+        }
+        else
+        {
+            GetComponent<ShowUIElement>().Show();
         }
     }
 
