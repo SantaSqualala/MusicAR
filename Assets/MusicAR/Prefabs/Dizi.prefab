@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7074755056560102612}
   - component: {fileID: 153263032649630204}
   - component: {fileID: 236575872633613780}
-  - component: {fileID: 5534407459670929211}
+  - component: {fileID: 6553158974643165023}
   m_Layer: 0
   m_Name: Dizi
   m_TagString: Untagged
@@ -78,7 +78,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f7ba91fb0a9791d4392dfce2d4374723, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -162,7 +162,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5534407459670929211
+--- !u!114 &6553158974643165023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,11 +171,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8133284583772407711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5543a31fdce5494e99cd4910b8899a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0517188716d957748870448cf7a8c91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4551834975798411790}
-  delay: 2
+  uiToActivate: {fileID: 3484826126052537703}
+  active: 0
 --- !u!1001 &3863699891049674532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,6 +187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InfosCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 414903399107494467, guid: 23f5e1b79bd684f4e807e2f8b48c5b82,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 771737727108576554, guid: 23f5e1b79bd684f4e807e2f8b48c5b82,
         type: 3}
@@ -305,6 +310,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23f5e1b79bd684f4e807e2f8b48c5b82, type: 3}
+--- !u!1 &3484826126052537703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 414903399107494467, guid: 23f5e1b79bd684f4e807e2f8b48c5b82,
+    type: 3}
+  m_PrefabInstance: {fileID: 3863699891049674532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4551834975798411790 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 771737727108576554, guid: 23f5e1b79bd684f4e807e2f8b48c5b82,
